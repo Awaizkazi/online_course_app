@@ -49,9 +49,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     GoogleFonts.acme(fontSize: 25, fontWeight: FontWeight.bold),
               ),
             ),
-            CategoriesCard(
-              title: 'Drwaing',
-              subTitle: '26 Courses',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CategoriesCard(
+                  title: 'Drawing',
+                  subTitle: '26 Courses',
+                  imageCrad: 'assets/images/girldraw.png',
+                ),
+                CategoriesCard(
+                  title: 'UI  / UX',
+                  subTitle: '50 Courses',
+                  imageCrad: 'assets/images/girldraw.png',
+                ),
+              ],
             ),
           ],
         ),
@@ -63,17 +74,42 @@ class _HomeScreenState extends State<HomeScreen> {
 class CategoriesCard extends StatelessWidget {
   final String title;
   final String subTitle;
+  final String imageCrad;
   const CategoriesCard({
     super.key,
     required this.title,
     required this.subTitle,
+    required this.imageCrad,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(left: 20),
+      width: 180,
+      decoration: BoxDecoration(
+        color: Colors.pink.shade100,
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(10),
+          bottom: Radius.elliptical(10, 5),
+        ),
+      ),
       child: Column(
-        children: [],
+        children: [
+          Text(
+            title,
+            style: TextStyle(fontSize: 30),
+          ),
+          Text(
+            subTitle,
+            style: TextStyle(fontSize: 16),
+          ),
+          Image.asset(
+            imageCrad,
+            alignment: Alignment.bottomCenter,
+            height: 120,
+          ),
+        ],
       ),
     );
   }
