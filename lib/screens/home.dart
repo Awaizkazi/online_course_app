@@ -13,58 +13,69 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Hi Rakib',
-                    style: TextStyle(fontSize: 18),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Hi Rakib',
+                      style: TextStyle(fontSize: 18),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.pink,
-                    backgroundImage: NetworkImage(
-                        'https://freepngimg.com/thumb/man/22654-6-man-thumb.png'),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.pink,
+                      backgroundImage: NetworkImage(
+                          'https://freepngimg.com/thumb/man/22654-6-man-thumb.png'),
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Text(
-              'Find Your Course',
-              style: GoogleFonts.acme(fontSize: 29),
-            ),
-            BigContainer(),
-            Center(
-              child: Text(
-                'Categories',
-                style:
-                    GoogleFonts.acme(fontSize: 25, fontWeight: FontWeight.bold),
+                ],
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                CategoriesCard(
-                  title: 'Drawing',
-                  subTitle: '26 Courses',
-                  imageCrad: 'assets/images/girldraw.png',
+              Text(
+                'Find Your Course',
+                style: GoogleFonts.acme(fontSize: 29),
+              ),
+              BigContainer(),
+              Center(
+                child: Text(
+                  'Categories',
+                  style: GoogleFonts.acme(
+                      fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                CategoriesCard(
-                  title: 'UI  / UX',
-                  subTitle: '50 Courses',
-                  imageCrad: 'assets/images/girldraw.png',
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CategoriesCard(
+                    title: 'Drawing',
+                    subTitle: '26 Courses',
+                    imageCrad: 'assets/images/girldraw.png',
+                  ),
+                  CategoriesCard(
+                    title: 'UI  / UX',
+                    subTitle: '50 Courses',
+                    imageCrad: 'assets/images/girldraw2.png',
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Popular Courses',
+                  style: GoogleFonts.aboreto(
+                      fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-              ],
-            ),
-          ],
+              ),
+              LargeContainer(),
+            ],
+          ),
         ),
       ),
     );
@@ -89,10 +100,7 @@ class CategoriesCard extends StatelessWidget {
       width: 180,
       decoration: BoxDecoration(
         color: Colors.pink.shade100,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(10),
-          bottom: Radius.elliptical(10, 5),
-        ),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         children: [
@@ -191,6 +199,53 @@ class BigContainer extends StatelessWidget {
                 size: 50,
               ),
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class LargeContainer extends StatelessWidget {
+  const LargeContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(20),
+      width: 369,
+      height: 180,
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 250, 234, 188),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Stack(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20,right: 10),
+                    child: Text(
+                      'Complete UX/UI\n& App Design',
+                      style: GoogleFonts.abyssinicaSil(
+                        fontSize: 22,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.all(20),
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(color: Color(0xffffe59c)),
           ),
         ],
       ),
