@@ -31,6 +31,7 @@ class SplashScreen extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
+              Image.asset('assets/images/man.jpg')
             ],
           ),
         ),
