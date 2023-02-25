@@ -249,24 +249,38 @@ class LargeContainer extends StatelessWidget {
                       Text('24 lessons'),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Wrap(
+                    alignment: WrapAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.amber,
-                        size: 40,
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                            size: 40,
+                          ),
+                          Text('4.9'),
+                        ],
                       ),
-                      Text('\$ 26.99'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                            size: 40,
+                          ),
+                          Text(
+                            '\$',
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text('26.99'),
+                        ],
+                      ),
                     ],
                   ),
                 ],
               ),
-              // Icon(
-              //   Icons.slideshow_outlined,
-              //   size: 40,
-              // ),
-              // Text('24 lessons'),
             ],
           ),
           Container(
