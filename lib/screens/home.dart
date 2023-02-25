@@ -41,9 +41,39 @@ class _HomeScreenState extends State<HomeScreen> {
               'Find Your Course',
               style: GoogleFonts.acme(fontSize: 29),
             ),
-            BigContainer()
+            BigContainer(),
+            Center(
+              child: Text(
+                'Categories',
+                style:
+                    GoogleFonts.acme(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+            ),
+            CategoriesCard(
+              title: 'Drwaing',
+              subTitle: '26 Courses',
+            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CategoriesCard extends StatelessWidget {
+  final String title;
+  final String subTitle;
+  const CategoriesCard({
+    super.key,
+    required this.title,
+    required this.subTitle,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [],
       ),
     );
   }
@@ -64,38 +94,65 @@ class BigContainer extends StatelessWidget {
         color: Color(0xffcef0ff),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8),
-            child: Text(
-              '50% OFF',
-              style: GoogleFonts.acme(
-                fontSize: 40,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14.0, vertical: 8),
+                    child: Text(
+                      '50% OFF',
+                      style: GoogleFonts.acme(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                    child: Text(
+                      '246+ Course',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 16.0, horizontal: 8),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Enroll Now',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.black, // <-- SEE HERE
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14.0),
-            child: Text(
-              '246+ Course',
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                textStyle: const TextStyle(fontSize: 20),
-              ),
-              onPressed: () {},
-              child: const Text(
-                'Enroll Now',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  color: Colors.black, // <-- SEE HERE
+              Padding(
+                padding: const EdgeInsets.only(top: 10, left: 10),
+                child: SizedBox(
+                  width: 160,
+                  child: Image.asset(
+                    'assets/images/girl.png',
+                  ),
                 ),
+              ),
+            ],
+          ),
+          Center(
+            child: Container(
+              child: Icon(
+                Icons.play_circle_outline,
+                size: 50,
               ),
             ),
           ),
