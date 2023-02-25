@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:online_course_app/screens/splash_screen.dart';
 import 'package:flutter/services.dart';
 
+import 'screens/home.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     statusBarColor: Color(0xffcef0ff), // status bar color
   ));
-  runApp(const MyApp());
+  runApp(const MyApp());  
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: HomeScreen(),
     );
   }
 }
