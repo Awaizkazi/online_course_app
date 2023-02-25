@@ -31,7 +31,14 @@ class SplashScreen extends StatelessWidget {
                   fontSize: 14,
                 ),
               ),
-              Image.asset('assets/images/man.jpg')
+              FloatingActionButton(
+                onPressed: () {},
+                child: Text(
+                  'Join',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              Image.asset('assets/images/man.jpg'),
             ],
           ),
         ),
