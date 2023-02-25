@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -9,37 +10,53 @@ class SplashScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color(0xffcef0ff),
         body: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40.0),
-                child: Text(
-                  'Online Course',
-                  style: TextStyle(
-                    fontSize: 18,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 40.0),
+                  child: Text(
+                    'Online Course',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
                   ),
                 ),
-              ),
-              Text(
-                'Noursish your\n    inner skills',
-                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'Choose your favorite course\n       and start learning',
-                style: TextStyle(
-                  height: 2.2,
-                  fontSize: 14,
+                Text(
+                  'Noursish your\n    inner skills',
+                  style: GoogleFonts.acme(fontSize: 25.0),
                 ),
-              ),
-              FloatingActionButton(
-                onPressed: () {},
-                child: Text(
-                  'Join',
-                  style: TextStyle(color: Colors.white),
+                Text(
+                  'Choose your favorite course\n         and start learning',
+                  style: TextStyle(
+                    height: 2.2,
+                    fontSize: 14,
+                  ),
                 ),
-              ),
-              Image.asset('assets/images/man.jpg'),
-            ],
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      FloatingActionButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Join',
+                          style: TextStyle(fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 455,
+                  child: Image.asset(
+                    'assets/images/man.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
