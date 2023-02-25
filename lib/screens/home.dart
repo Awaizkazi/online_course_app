@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
                   'Popular Courses',
-                  style: GoogleFonts.aboreto(
+                  style: GoogleFonts.alegreyaSans(
                       fontSize: 25, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -227,9 +227,11 @@ class LargeContainer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(top: 20,right: 10),
+                    padding: const EdgeInsets.only(top: 20, right: 20),
                     child: Text(
                       'Complete UX/UI\n& App Design',
                       style: GoogleFonts.abyssinicaSil(
@@ -237,18 +239,56 @@ class LargeContainer extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.slideshow_outlined,
+                        size: 40,
+                      ),
+                      Text('24 lessons'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 40,
+                      ),
+                      Text('\$ 26.99'),
+                    ],
+                  ),
                 ],
               ),
+              // Icon(
+              //   Icons.slideshow_outlined,
+              //   size: 40,
+              // ),
+              // Text('24 lessons'),
             ],
           ),
           Container(
             margin: EdgeInsets.all(20),
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(color: Color(0xffffe59c)),
+            width: 140,
+            height: 140,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 250, 222, 142),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Image.asset(
+              'assets/images/girldraw.png',
+            ),
           ),
         ],
       ),
     );
   }
 }
+
+// Icon(
+//                     Icons.slideshow_outlined,
+//                     size: 40,
+//                   ),
+//                   Text('24 lessons'),
